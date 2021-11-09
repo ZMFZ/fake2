@@ -16,7 +16,15 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-
+- 名称：设置 Go 环境
+  用途：actions/setup-go@v2.1.4
+  和：
+    # 要下载（如有必要）和使用的 Go 版本。支持 semver 规范和范围。
+    go-version: # 可选
+    # 是否只下载稳定版本
+    稳定：# 可选，默认为 true
+    # 用于从 go-versions 中提取节点分布。由于有一个默认值，这通常不是由用户提供的。
+    token: # 可选，默认为 ${{ github.token }}
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
